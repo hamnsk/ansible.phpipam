@@ -16,7 +16,14 @@ galaxy_info:
 dependencies:
 - name: uniqconsulting.nginx
   vars:
-    nginx_vhosts: []
+    nginx_vhosts:
+    - default: yes
+      type: web
+      server_name:
+      - ipam.example.org
+      php_version: 73
+      locations: []
+      
 - name: uniqconsulting.php
   vars:
     php_versions:
