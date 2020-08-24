@@ -3,7 +3,7 @@ galaxy_info:
   author: uniQconsulting ag
   company: uniqconsulting
   description: phpIPAM
-  role_name: phpiapm
+  role_name: phpipam
   min_ansible_version: 2.4
   license: GPLv3
   platforms:
