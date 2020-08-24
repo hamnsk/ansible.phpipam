@@ -9,7 +9,6 @@
   include_tasks: install.yml
   tags:
   - role_phpipam
-  when: duo_install == true
 
 - name: config
   include_tasks: config.yml
