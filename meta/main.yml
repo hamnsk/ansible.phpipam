@@ -23,6 +23,7 @@ dependencies:
       - ipam.example.org
       php_version: 73
       locations: []
+      document_root: "{{ phpipam_installdir }}"
       
 - name: uniqconsulting.php
   vars:
