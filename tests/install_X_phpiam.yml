@@ -1,0 +1,7 @@
+#!/usr/bin/ansible-playbook 
+---
+- name: phpipam Installation
+  hosts: localhost
+  roles:
+  - uniqconsulting.phpipam
+...

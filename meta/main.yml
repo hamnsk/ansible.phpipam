@@ -1,0 +1,24 @@
+---
+galaxy_info:
+  author: uniQconsulting ag
+  company: uniqconsulting
+  description: phpIPAM
+  role_name: phpiapm
+  min_ansible_version: 2.4
+  license: GPLv3
+  platforms:
+  - name: EL
+    versions:
+    - 8
+  galaxy_tags:
+  - system
+
+dependencies:
+- name: uniqconsulting.nginx
+  vars:
+    nginx_vhosts: []
+- name: uniqconsulting.php
+  vars:
+    php_versions:
+    - 73
+...

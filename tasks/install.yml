@@ -1,0 +1,12 @@
+---
+
+- name: Install phpipam
+  git:
+    repo: https://github.com/phpipam/phpipam.git
+    dest: "{{ phpipam_installdir }}"
+    clone: yes
+    update: no
+    version: "{{ phpipam_branch }}"
+    track_submodules: yes
+
+...

@@ -1,0 +1,1 @@
+- phpIPAM root dir: /var/www/vhosts/phpipam
