@@ -33,7 +33,6 @@ dependencies:
 - name: uniqconsulting.mariadb
   vars:
     mariadb_secure_installation: yes
-    mariadb_root_password: "{{ lookup('password', '/dev/null length=15 chars=ascii_letters') }}"
     mariadb_databases:
     - name: phpipam
     mariadb_users_create:
