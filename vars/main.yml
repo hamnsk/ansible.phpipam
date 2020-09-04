@@ -1,5 +1,6 @@
 ---
 
 phpipam_installdir: /var/www/vhosts/phpipam
+phpipam_cli_binary: "/usr/bin/php73"
 
 ...

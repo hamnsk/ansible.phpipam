@@ -1,6 +1,19 @@
 ---
 
 phpipam_branch: "1.4"
+phpipam_db_name: "phpipam"
+phpipam_db_user: "phpipam"
+phpipam_db_password: "supersecretpassword"
 
+phpipam_ping_check_send_mail: "true"
+phpipam_ping_check_method: "false"
+phpipam_discovery_check_send_mail: "true"
+phpipam_discovery_check_method: "false"
+phpipam_removed_addresses_send_mail: "true"
+phpipam_removed_addresses_timelimit: "86400 * 7"
+phpipam_resolve_emptyonly: "true"
+phpipam_resolve_verbose: "true"
+phpipam_baseurl: "/"
+phpipam_requests_public: "false"
 
 ...

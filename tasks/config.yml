@@ -1,3 +1,8 @@
 ---
 
+- name: deploy conifg.php
+  template:
+    src: config.php.j2
+    dest: /var/www/vhosts/phpipam/config.dist.php
+
 ...
