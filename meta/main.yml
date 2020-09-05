@@ -38,5 +38,6 @@ dependencies:
     mariadb_users_create:
       - name: "{{ phpipam_db_user }}"
         password: "{{ phpipam_db_password }}"
-        host: localhost
+        hosts: 
+        - localhost
 ...
