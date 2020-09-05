@@ -20,7 +20,7 @@ dependencies:
     - default: yes
       type: web
       server_name:
-      - ipam.example.org
+      - "{{ phpipam_domain }}"
       php_version: 73
       locations: []
       document_root: "{{ phpipam_installdir }}"
@@ -34,8 +34,9 @@ dependencies:
   vars:
     mariadb_secure_installation: yes
     mariadb_databases:
-    - name: phpipam
+    - name: "{{ phpipam_db_name }}"
     mariadb_users_create:
-      - name: phpipam                   #default: undefined
-        password: krypt0n               #default: undefined
+      - name: "{{ phpipam_db_user }}"
+        password: "{{ phpipam_db_password }}"
+        host: localhost
 ...

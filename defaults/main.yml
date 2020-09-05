@@ -1,6 +1,8 @@
 ---
 
 phpipam_branch: "1.4"
+phpipam_domain: ipam.example.org
+
 phpipam_db_name: "phpipam"
 phpipam_db_user: "phpipam"
 phpipam_db_password: "supersecretpassword"
