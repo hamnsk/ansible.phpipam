@@ -1,0 +1,52 @@
+---
+
+- name: uniqconsulting.nginx
+  include_role:
+    name: uniqconsulting.nginx
+  vars:
+    nginx_vhosts:
+    - default: yes
+      type: web
+      server_name:
+      - "{{ phpipam_domain }}"
+      php_version: 73
+      locations: []
+      document_root: "{{ phpipam_installdir }}"
+      
+- name: uniqconsulting.php
+  include_role:
+    name: uniqconsulting.php
+  vars:
+    php_versions:
+    - 73
+    php_packages:
+    - php
+    - php-cli
+    - php-fpm
+    - php-mysqlnd
+    - php-pdo
+    - php-gd
+    - php-pecl-zip
+    - php-yaml
+    - php-json
+    - php-mbstring
+    - php-xml
+    - php-gmp
+    - php-pear
+      
+- name: uniqconsulting.mariadb
+  include_role:
+    name: uniqconsulting.mariadb
+  vars:
+    mariadb_secure_installation: yes
+    mariadb_databases:
+    - name: "{{ phpipam_db_name }}"
+    mariadb_users_create:
+      - name: "{{ phpipam_db_user }}"
+        password: "{{ phpipam_db_password }}"
+        privs:
+        - "{{ phpipam_db_name }}.*:ALL"
+        hosts: 
+        - localhost
+
+...

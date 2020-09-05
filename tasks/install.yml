@@ -9,4 +9,15 @@
     version: "{{ phpipam_branch }}"
     track_submodules: yes
 
+- name: remove unused files
+  file:
+    path: "{{ phpipam_installdir }}/{{ item }}"
+    state: absent
+  with_items:
+  - config.docker.php
+  - config.dist.php
+  - INSTALL.txt
+  - README.md
+  - UPDATE
+
 ...

@@ -5,6 +5,12 @@
   - role_phpipam
   - includes
 
+- name: run dependency
+  include_tasks: dependency.yml
+  tags:
+  - role_phpipam
+  - dependency
+
 - name: installation
   include_tasks: install.yml
   tags:
