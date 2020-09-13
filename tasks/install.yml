@@ -21,15 +21,9 @@
   - UPDATE
 
 - name: update cronjobs
-  cron:
-    name: phpIPAM Status Check
-    job: "{{ phpipam_cli_binary }} {{ phpipam_installdir }}/functions/scripts/{{ item }}"
-    minute: "*/15"
-    user: root
-    cron_file: phpipam
-  with_items:
-  - discoveryCheck.php
-  - pingCheck.php
+  template:
+    src: templates/cron_file.j2
+    dest: /etc/cron.d/phpipam
 
 - name: fix php bug
   file:
