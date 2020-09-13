@@ -5,4 +5,19 @@
     src: config.php.j2
     dest: /var/www/vhosts/phpipam/config.php
 
+
+- name: check if tables already exist
+   shell:  mysql -e "DESCRIBE users" phpipam > /dev/null 
+   register: dbstatus
+
+- name: import DB if new installation
+  shell: "cat {{ phpipam_installdir }}/db/SCHEMA.sql | grep -v 'DROP' | mysql {{ phpipam_db_name }}"
+  when: dbstatus.rc != 0
+
+- name: set admin pw
+  shell: echo "{{ phpipam_admin_pw }}" | {{ phpipam_cli_binary }} {{ phpipam_installdir }}/functions/scripts/reset-admin-password.php
+  when: dbstatus.rc != 0
+
+ 
+
 ...

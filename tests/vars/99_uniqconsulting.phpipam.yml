@@ -1,7 +1,18 @@
 ---
-  
-mariadb_root_password: "supersecretpassword"
+
+# MINIMAL SETTUP
+
+# Domain name
+phpipam_domain: ipam.example.org
+
+# Initial phpIPAM Admin Password
+phpipam_admin_pw: "phpIPAM.admin"
+
+# phpIPAM DB User PW (should be set to a new value)
 phpipam_db_password: "supersecretpassword"
+
+# Mariadb root password (can be left empty)
+mariadb_root_password: ""
 
 ...
 
