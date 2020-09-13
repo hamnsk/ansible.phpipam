@@ -31,4 +31,10 @@
   - discoveryCheck.php
   - pingCheck.php
 
+- name: fix php bug
+  file:
+    path: /var/opt/remi/php73/lib/php/session
+    group: nginx
+    owner: nginx
+
 ...
