@@ -19,6 +19,21 @@
   shell: "echo \"{{ phpipam_admin_pw }}\" | {{ phpipam_cli_binary }} {{ phpipam_installdir }}/functions/scripts/reset-admin-password.php"
   when: dbstatus.rc != 0
 
- 
+- name: settings - siteurl
+  shell: "mysql -e \"UPDATE settings SET siteURL = 'https://{{ phpipam_domain }}'\""
+  when: dbstatus.rc != 0
+
+- name: settings - sitedomain
+  shell: "mysql -e \"UPDATE settings SET siteDomain = '{{ phpipam_domain }}'\""
+  when: dbstatus.rc != 0
+
+- name: settings - theme
+  shell: "mysql -e \"UPDATE settings SET theme = 'white'\""
+  when: dbstatus.rc != 0
+
+- name: settings - inactivityTimeout
+  shell: "mysql -e \"UPDATE settings SET inactivityTimeout = 36000\""
+  when: dbstatus.rc != 0
+
 
 ...
