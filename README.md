@@ -3,7 +3,15 @@
 ansible.phpipam
 ==============================================
 
-This Ansible Role installes & configures phpIPAM
+This Ansible Role installes & configures phpIPAM.
+
+Installation
+------------
+
+With ansible-galaxy:
+```
+ansible-galaxy install uniqconsulting.phpipam uniqconsulting.nginx uniqconsulting.php
+```
 
 Requirements
 ------------
