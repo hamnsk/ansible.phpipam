@@ -4,6 +4,8 @@
   template:
     src: config.php.j2
     dest: /var/www/vhosts/phpipam/config.php
+    owner: nginx
+    group: nginx
 
 
 - name: check if tables already exist

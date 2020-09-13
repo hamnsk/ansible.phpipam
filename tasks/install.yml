@@ -37,4 +37,19 @@
     group: nginx
     owner: nginx
 
+- name: change owner
+  file:
+    path: "{{ phpipam_installdir }}"
+    owner: nginx
+    group: nginx
+    recurse: yes
+    state: directory
+
+- name: set uploads permission
+  file:
+    path: "{{ phpipam_installdir }}/app/admin/import-export/upload/"
+    owner: nginx
+    group: nginx
+    state: directory
+    mode: '0777'
 ...
