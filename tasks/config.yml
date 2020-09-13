@@ -35,5 +35,10 @@
   shell: "mysql -e \"UPDATE settings SET inactivityTimeout = 36000\" {{ phpipam_db_name }}"
   when: dbstatus.rc != 0
 
+- name: settings - siteTitle
+  shell: "mysql -e \"UPDATE settings SET siteTitle = 'phpIPAM'\" {{ phpipam_db_name }}"
+  when: dbstatus.rc != 0
+
+
 
 ...
