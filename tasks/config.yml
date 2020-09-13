@@ -9,6 +9,7 @@
 - name: check if tables already exist
   shell: "mysql -e \"DESCRIBE users\" phpipam > /dev/null"
   register: dbstatus
+  failed_when: false
 
 - name: import DB if new installation
   shell: "cat {{ phpipam_installdir }}/db/SCHEMA.sql | grep -v 'DROP' | mysql {{ phpipam_db_name }}"
