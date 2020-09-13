@@ -7,7 +7,7 @@
 
 
 - name: check if tables already exist
-  shell: "mysql -e \"DESCRIBE users\" phpipam > /dev/null"
+  shell: "mysql -e \"DESCRIBE users\" {{ phpipam_db_name }} > /dev/null"
   register: dbstatus
   failed_when: false
 
@@ -20,19 +20,19 @@
   when: dbstatus.rc != 0
 
 - name: settings - siteurl
-  shell: "mysql -e \"UPDATE settings SET siteURL = 'https://{{ phpipam_domain }}'\""
+  shell: "mysql -e \"UPDATE settings SET siteURL = 'https://{{ phpipam_domain }}'\" {{ phpipam_db_name }}"
   when: dbstatus.rc != 0
 
 - name: settings - sitedomain
-  shell: "mysql -e \"UPDATE settings SET siteDomain = '{{ phpipam_domain }}'\""
+  shell: "mysql -e \"UPDATE settings SET siteDomain = '{{ phpipam_domain }}'\" {{ phpipam_db_name }}"
   when: dbstatus.rc != 0
 
 - name: settings - theme
-  shell: "mysql -e \"UPDATE settings SET theme = 'white'\""
+  shell: "mysql -e \"UPDATE settings SET theme = 'white'\" {{ phpipam_db_name }}"
   when: dbstatus.rc != 0
 
 - name: settings - inactivityTimeout
-  shell: "mysql -e \"UPDATE settings SET inactivityTimeout = 36000\""
+  shell: "mysql -e \"UPDATE settings SET inactivityTimeout = 36000\" {{ phpipam_db_name }}"
   when: dbstatus.rc != 0
 
 
