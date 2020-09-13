@@ -7,7 +7,7 @@
 
 
 - name: check if tables already exist
-   shell:  mysql -e "DESCRIBE users" phpipam > /dev/null 
+   shell: "mysql -e \"DESCRIBE users\" phpipam > /dev/null"
    register: dbstatus
 
 - name: import DB if new installation
@@ -15,7 +15,7 @@
   when: dbstatus.rc != 0
 
 - name: set admin pw
-  shell: echo "{{ phpipam_admin_pw }}" | {{ phpipam_cli_binary }} {{ phpipam_installdir }}/functions/scripts/reset-admin-password.php
+  shell: "echo \"{{ phpipam_admin_pw }}\" | {{ phpipam_cli_binary }} {{ phpipam_installdir }}/functions/scripts/reset-admin-password.php"
   when: dbstatus.rc != 0
 
  

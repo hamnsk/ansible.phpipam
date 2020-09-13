@@ -10,7 +10,7 @@ Installation
 
 With ansible-galaxy:
 ```
-ansible-galaxy install uniqconsulting.phpipam uniqconsulting.nginx uniqconsulting.php
+ansible-galaxy install uniqconsulting.phpipam uniqconsulting.nginx uniqconsulting.php uniqconsulting.mariadb
 ```
 
 Requirements
@@ -25,6 +25,7 @@ Dependencies
 This Ansilbe Role dependencies to these roles:
 - `uniqconsulting.nginx`
 - `uniqconsulting.php`
+- `uniqconsulting.mariadb`
 
 Example Playbook
 ----------------
