@@ -33,6 +33,7 @@
     - php-xml
     - php-gmp
     - php-pear
+    - php-ldap
       
 - name: uniqconsulting.mariadb
   include_role:
