@@ -46,4 +46,24 @@
     group: nginx
     state: directory
     mode: '0777'
+
+- name: create auto-exporter dir
+  file:
+    path:  /opt/phpipam_exporter
+    state: directory
+
+- name: setup auto-exporter files
+  template:
+    src: tempaltes/export_{{ item }}.j2
+    dest: /opt/phpipam_exporter/{{ item }}
+  with_items:
+  - cronjob.sh
+  - generate-xls.php
+
+- name: create cronjob for export
+  cron:
+    name: "phpipam_auto-exporter"
+    minute: "15"
+    hour: "2"
+    job: "/opt/phpipam_exporter/cronjob.sh"
 ...

@@ -19,4 +19,9 @@ phpipam_resolve_verbose: "true"
 phpipam_baseurl: "/"
 phpipam_requests_public: "false"
 
+# Auto-Exporter Settings
+phpipam_exporter_from: "ipam@example.org"
+phpipam_exporter_to: "support@example.org"
+phpipam_exporter_sourcepath: "/var/www/vhosts/phpipam"
+
 ...

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+from_mail="{{ phpipam_exporter_from }}"
+to_mail="{{ phpipam_exporter_to }}"
+file_name="auto-export.xls"
+subject="Auto Exporter $(date +%F)"
+text="A new auto-export has been generated."
+
+cd /opt/phpipam_export
+
+php73 generate-xls.php > $file_name
+echo "$text" | mailx -s "$subject" -a "$file_name" -r "$from_mail" "$to_mail"
+rm -f $file_name

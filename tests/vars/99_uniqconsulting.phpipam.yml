@@ -14,5 +14,9 @@ phpipam_db_password: "supersecretpassword"
 # Mariadb root password (can be left empty)
 mariadb_root_password: ""
 
+# Auto-Exporter Settings
+phpipam_exporter_from: "ipam@example.org"
+phpipam_exporter_to: "support@example.org"
+
 ...
 
